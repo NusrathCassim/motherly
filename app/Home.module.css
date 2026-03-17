@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffcdd9, #ffd2ec);
+  text-align: center;
+  position: relative; /* important for absolute circles */
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px); /* makes it soft and dreamy */
+  animation: float 25s infinite linear;
+}
+
+.circle1 {
+  background-color: #e21880e7; /* semi-transparent pink */
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -150px;
+  z-index: 0;
+}
+
+.circle2 {
+  background-color:  #e21880e7;  /* semi-transparent lilac */
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -100px;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+.title {
+  cursor: pointer;
+  font-size: 3rem;
+  color: #3e0428;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Playwrite US Trad", cursive;
+  z-index: 2;
+  position: relative; /* ensure above circles */
+}
+
+.subtitle {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #3f113a;
+  z-index: 2;
+  position: relative;
+  font-family:  "Poiret One";
+  font-weight: 600;
+}
+.navcontainer{
+  display: flex;
+  z-index: 2;
+  /* flex-direction: column; */
+}
+/* Navigation UL styling */
+.ulstyles {
+  margin-top: 2rem;
+  font-family:  "Poiret One";
+  color: #ffe2f4;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  cursor: pointer;
+  list-style: none; 
+  background-color: #2e1424;
+  border-radius: 2rem;
+  padding: 10px;
+
+}
+
+/* Smooth hover effect */
+.ulstyles li {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* On hover: slightly scale and change color */
+.ulstyles li:hover {
+  transform: scale(1.2); /* small zoom */
+  color: #ffd4f3; /* accent color */
+}
